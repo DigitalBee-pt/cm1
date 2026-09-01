@@ -118,7 +118,7 @@ function Index() {
       <header className="border-b border-border/60 bg-cream">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
           <span className="font-serif text-2xl tracking-tight">Catarina Mexia</span>
-          <p className="hidden text-xs tracking-wide text-muted-foreground sm:block">
+          <p className="hidden text-sm tracking-wide text-muted-foreground sm:block">
             Psicóloga Clínica · Consultas online
           </p>
         </div>
@@ -127,7 +127,7 @@ function Index() {
       <section className="bg-cream">
         <div className="mx-auto grid max-w-6xl gap-12 px-6 pb-16 pt-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pt-12">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand">
               Terapia de casal
             </p>
             <h1 className="mt-5 font-serif text-4xl leading-[1.1] sm:text-5xl lg:text-6xl">
@@ -148,7 +148,7 @@ function Index() {
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-secondary text-muted-foreground">
                 <Camera className="h-5 w-5" aria-hidden="true" />
               </div>
-              <p className="text-xs text-muted-foreground">
+              <p className="text-sm text-muted-foreground">
                 Catarina Mexia · Psicóloga Clínica · mais de 30 anos de experiência
               </p>
             </div>
@@ -159,7 +159,7 @@ function Index() {
             <h2 className="font-serif text-3xl">Pedir disponibilidade</h2>
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               <div className="space-y-1.5">
-                <label htmlFor="nome" className="text-xs text-muted-foreground">
+                <label htmlFor="nome" className="text-sm text-muted-foreground">
                   Nome
                 </label>
                 <Input
@@ -171,7 +171,7 @@ function Index() {
                 />
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="email" className="text-xs text-muted-foreground">
+                <label htmlFor="email" className="text-sm text-muted-foreground">
                   Email
                 </label>
                 <Input
@@ -184,7 +184,7 @@ function Index() {
                 />
               </div>
               <div className="space-y-1.5">
-                <label htmlFor="telefone" className="text-xs text-muted-foreground">
+                <label htmlFor="telefone" className="text-sm text-muted-foreground">
                   Telefone
                 </label>
                 <Input
@@ -202,7 +202,7 @@ function Index() {
               >
                 Ver disponibilidade
               </button>
-              <p className="text-center text-xs text-muted-foreground">
+              <p className="text-center text-sm text-muted-foreground">
                 Não precisa de explicar a situação nesta fase.
               </p>
             </form>
@@ -320,7 +320,7 @@ function Index() {
             </p>
           </div>
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-brand">
+            <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand">
               Quem vos acompanha
             </p>
             <h2 className="mt-3 font-serif text-4xl">Catarina Mexia</h2>
@@ -397,19 +397,19 @@ function Index() {
 
       {/* Footer */}
       <footer className="bg-foreground text-background">
-        <div className="mx-auto grid max-w-6xl gap-6 px-6 py-8 text-xs sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-6xl gap-6 px-6 py-8 text-sm sm:grid-cols-2 lg:grid-cols-4">
           <p className="flex items-start gap-2 opacity-80">
-            <ShieldCheck className="h-4 w-4 shrink-0" strokeWidth={1.3} aria-hidden="true" />
+            <ShieldCheck className="h-5 w-5 shrink-0" strokeWidth={1.3} aria-hidden="true" />
             Cédula Profissional
             <br />
             00000
           </p>
           <p className="flex items-start gap-2 opacity-80">
-            <Award className="h-4 w-4 shrink-0" strokeWidth={1.3} aria-hidden="true" />
+            <Award className="h-5 w-5 shrink-0" strokeWidth={1.3} aria-hidden="true" />
             Registo ERS 123456
           </p>
           <p className="flex items-start gap-2 opacity-80">
-            <Laptop className="h-4 w-4 shrink-0" strokeWidth={1.3} aria-hidden="true" />
+            <Laptop className="h-5 w-5 shrink-0" strokeWidth={1.3} aria-hidden="true" />
             Consultas online
             <br />
             Portugal e estrangeiro
