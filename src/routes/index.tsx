@@ -130,7 +130,7 @@ function Index() {
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-brand">
               Terapia de casal
             </p>
-            <h1 className="mt-5 font-serif text-[2.5rem] leading-[1.1] sm:text-[3rem] lg:text-[3.5rem]">
+            <h1 className="mt-5 font-serif text-[2.25rem] leading-[1.1] sm:text-[2.75rem] lg:text-[3.25rem]">
               Quando conversar
               <br />
               já não parece chegar
