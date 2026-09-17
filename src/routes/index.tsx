@@ -156,7 +156,7 @@ function Index() {
           </div>
 
           {/* Form card */}
-          <div className="rounded-sm bg-card p-7 shadow-[0_18px_50px_-30px_oklch(0.24_0.05_45/0.45)] sm:p-9">
+          <div className="rounded-sm bg-card p-7 shadow-[0_18px_50px_-30px_oklch(0.3_0.06_25/0.45)] sm:p-9">
             <h2 className="font-serif text-3xl">Pedir disponibilidade</h2>
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
               <div className="space-y-1.5">
@@ -223,7 +223,7 @@ function Index() {
                 className="mt-4 flex items-center justify-between rounded-sm border border-border px-4 py-3 text-sm text-muted-foreground transition-colors hover:border-brand"
               >
                 Escreva a sua mensagem...
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[oklch(0.72_0.17_150)]">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-brand">
                   <Send className="h-4 w-4 text-brand-foreground" aria-hidden="true" />
                 </span>
               </a>
