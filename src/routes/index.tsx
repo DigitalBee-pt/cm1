@@ -373,9 +373,7 @@ function Index() {
       <section className="bg-soft">
         <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-8 px-6 py-12 lg:flex-row">
           <h2 className="font-serif text-2xl leading-snug sm:text-3xl">
-            Se este pode ser o momento certo,
-            <br />
-            podemos começar por uma primeira conversa
+            Se sentir que este pode ser o momento certo para procurar ajuda, estou disponível para vos acompanhar 
           </h2>
           <div className="flex flex-col items-center gap-3">
             <a
