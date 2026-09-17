@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState, type FormEvent } from "react";
 import {
   Award,
-  Camera,
   Check,
   Globe,
   Laptop,
