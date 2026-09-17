@@ -213,7 +213,7 @@ function Index() {
                 href={WHATSAPP_URL}
                 className="flex items-center gap-2 text-sm font-medium hover:text-brand"
               >
-                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-[oklch(0.72_0.17_150)]">
+                <span className="flex h-6 w-6 items-center justify-center rounded-full bg-brand">
                   <Send className="h-3 w-3 text-brand-foreground" aria-hidden="true" />
                 </span>
                 Prefere falar no WhatsApp?
