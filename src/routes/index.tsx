@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 
+import { submitContactRequest } from "@/lib/contact.functions";
+
 import { Toaster } from "@/components/ui/sonner";
 import { Input } from "@/components/ui/input";
 import {
@@ -212,9 +214,10 @@ function Index() {
               </div>
               <button
                 type="submit"
-                className="mt-2 w-full rounded-sm bg-brand px-6 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-brand-foreground transition-opacity hover:opacity-90"
+                disabled={sending}
+                className="mt-2 w-full rounded-sm bg-brand px-6 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-brand-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
               >
-                Ver disponibilidade
+                {sending ? "A enviar..." : "Ver disponibilidade"}
               </button>
               <p className="text-center text-sm text-muted-foreground">
                 Não precisa de explicar a situação nesta fase.
