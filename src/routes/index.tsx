@@ -101,15 +101,24 @@ const faqs = [
 
 function Index() {
   const [form, setForm] = useState({ nome: "", email: "", telefone: "" });
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!form.nome || !form.email) {
       toast.error("Preencha o nome e o email, por favor.");
       return;
     }
-    toast.success("Pedido enviado. Entraremos em contacto em breve.");
-    setForm({ nome: "", email: "", telefone: "" });
+    setSending(true);
+    try {
+      await submitContactRequest({ data: form });
+      toast.success("Pedido enviado. Entraremos em contacto em breve.");
+      setForm({ nome: "", email: "", telefone: "" });
+    } catch {
+      toast.error("Não foi possível enviar o pedido. Tente novamente ou fale connosco no WhatsApp.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
