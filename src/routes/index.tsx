@@ -13,6 +13,8 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 
+import { submitContactRequest } from "@/lib/contact.functions";
+
 import { Toaster } from "@/components/ui/sonner";
 import { Input } from "@/components/ui/input";
 import {
@@ -44,7 +46,9 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATSAPP_URL = "https://wa.me/351000000000";
+const WHATSAPP_URL =
+  "https://wa.me/351917297505?text=" +
+  encodeURIComponent("Olá, gostaria de pedir disponibilidade para uma primeira conversa.");
 
 const trustItems = [
   { icon: User, text: "Psicóloga Clínica" },
@@ -99,15 +103,24 @@ const faqs = [
 
 function Index() {
   const [form, setForm] = useState({ nome: "", email: "", telefone: "" });
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!form.nome || !form.email) {
       toast.error("Preencha o nome e o email, por favor.");
       return;
     }
-    toast.success("Pedido enviado. Entraremos em contacto em breve.");
-    setForm({ nome: "", email: "", telefone: "" });
+    setSending(true);
+    try {
+      await submitContactRequest({ data: form });
+      toast.success("Pedido enviado. Entraremos em contacto em breve.");
+      setForm({ nome: "", email: "", telefone: "" });
+    } catch {
+      toast.error("Não foi possível enviar o pedido. Tente novamente ou fale connosco no WhatsApp.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -201,9 +214,10 @@ function Index() {
               </div>
               <button
                 type="submit"
-                className="mt-2 w-full rounded-sm bg-brand px-6 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-brand-foreground transition-opacity hover:opacity-90"
+                disabled={sending}
+                className="mt-2 w-full rounded-sm bg-brand px-6 py-4 text-sm font-semibold uppercase tracking-[0.16em] text-brand-foreground transition-opacity hover:opacity-90 disabled:opacity-60"
               >
-                Ver disponibilidade
+                {sending ? "A enviar..." : "Ver disponibilidade"}
               </button>
               <p className="text-center text-sm text-muted-foreground">
                 Não precisa de explicar a situação nesta fase.
@@ -403,11 +417,13 @@ function Index() {
             <ShieldCheck className="h-5 w-5 shrink-0" strokeWidth={1.3} aria-hidden="true" />
             Cédula Profissional
             <br />
-            00000
+            1669
           </p>
           <p className="flex items-start gap-2 opacity-80">
             <Award className="h-5 w-5 shrink-0" strokeWidth={1.3} aria-hidden="true" />
-            Registo ERS 123456
+            Registo ERS
+            <br />
+            E151039
           </p>
           <p className="flex items-start gap-2 opacity-80">
             <Laptop className="h-5 w-5 shrink-0" strokeWidth={1.3} aria-hidden="true" />
@@ -416,9 +432,14 @@ function Index() {
             Portugal e estrangeiro
           </p>
           <div className="space-y-1 opacity-80">
-            <p>Política de Privacidade</p>
-            <p>Política de Cookies</p>
-            <p>Livro de Reclamações</p>
+            <a
+              href="https://catarinamexia.com/politica-de-privacidade/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Política de Privacidade
+            </a>
           </div>
         </div>
       </footer>
