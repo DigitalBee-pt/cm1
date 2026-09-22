@@ -105,10 +105,20 @@ function Index() {
   const [form, setForm] = useState({ nome: "", email: "", telefone: "" });
   const [sending, setSending] = useState(false);
 
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     if (!form.nome || !form.email) {
       toast.error("Preencha o nome e o email, por favor.");
+      return;
+    }
+    if (!EMAIL_RE.test(form.email.trim())) {
+      toast.error("Introduza um email válido, por favor.");
+      return;
+    }
+    if (form.telefone && !/^\d{9}$/.test(form.telefone)) {
+      toast.error("O telefone deve ter 9 dígitos.");
       return;
     }
     setSending(true);
@@ -208,7 +218,14 @@ function Index() {
                   type="tel"
                   placeholder="O seu telefone"
                   value={form.telefone}
-                  onChange={(e) => setForm({ ...form, telefone: e.target.value })}
+                  onChange={(e) =>
+                    setForm({
+                      ...form,
+                      telefone: e.target.value.replace(/\D/g, "").slice(0, 9),
+                    })
+                  }
+                  inputMode="numeric"
+                  maxLength={9}
                   className="h-12 rounded-sm"
                 />
               </div>

@@ -7,7 +7,12 @@ export const submitContactRequest = createServerFn({ method: "POST" })
       .object({
         nome: z.string().trim().min(1),
         email: z.string().trim().email(),
-        telefone: z.string().trim().optional().default(""),
+        telefone: z
+          .string()
+          .trim()
+          .regex(/^\d{9}$/, "O telefone deve ter 9 dígitos.")
+          .optional()
+          .default(""),
       })
       .parse(data)
   )
