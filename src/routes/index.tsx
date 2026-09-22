@@ -44,7 +44,9 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const WHATSAPP_URL = "https://wa.me/351000000000";
+const WHATSAPP_URL =
+  "https://wa.me/351917297505?text=" +
+  encodeURIComponent("Olá, gostaria de pedir disponibilidade para uma primeira conversa.");
 
 const trustItems = [
   { icon: User, text: "Psicóloga Clínica" },
@@ -403,11 +405,13 @@ function Index() {
             <ShieldCheck className="h-5 w-5 shrink-0" strokeWidth={1.3} aria-hidden="true" />
             Cédula Profissional
             <br />
-            00000
+            1669
           </p>
           <p className="flex items-start gap-2 opacity-80">
             <Award className="h-5 w-5 shrink-0" strokeWidth={1.3} aria-hidden="true" />
-            Registo ERS 123456
+            Registo ERS
+            <br />
+            E151039
           </p>
           <p className="flex items-start gap-2 opacity-80">
             <Laptop className="h-5 w-5 shrink-0" strokeWidth={1.3} aria-hidden="true" />
@@ -416,9 +420,14 @@ function Index() {
             Portugal e estrangeiro
           </p>
           <div className="space-y-1 opacity-80">
-            <p>Política de Privacidade</p>
-            <p>Política de Cookies</p>
-            <p>Livro de Reclamações</p>
+            <a
+              href="https://catarinamexia.com/politica-de-privacidade/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Política de Privacidade
+            </a>
           </div>
         </div>
       </footer>
