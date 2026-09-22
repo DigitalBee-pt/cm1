@@ -457,6 +457,14 @@ function Index() {
             >
               Política de Privacidade
             </a>
+            <a
+              href="https://catarinamexia.com/termos-e-condicoes/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline"
+            >
+              Termos e Condições
+            </a>
           </div>
         </div>
       </footer>
