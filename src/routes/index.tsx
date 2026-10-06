@@ -24,7 +24,6 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import botanical from "@/assets/botanical-line-art.png";
-import catarinaMexia from "@/assets/catarina-mexia.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -169,7 +168,7 @@ function Index() {
 
             <div className="mt-12 flex items-center gap-4">
               <img
-                src={catarinaMexia.url}
+                src="/catarina-mexia.jpg"
                 alt="Fotografia de Catarina Mexia, psicóloga clínica"
                 loading="lazy"
                 className="h-14 w-14 shrink-0 rounded-full object-cover ring-2 ring-secondary"
@@ -347,7 +346,7 @@ function Index() {
         <div className="mx-auto grid max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[0.8fr_1.2fr]">
           <div className="aspect-[4/5] overflow-hidden bg-secondary">
             <img
-              src={catarinaMexia.url}
+              src="/catarina-mexia.jpg"
               alt="Fotografia real da psicóloga Catarina Mexia"
               loading="lazy"
               className="h-full w-full object-cover"
